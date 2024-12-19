@@ -1,3 +1,4 @@
+using GameDevWithMarco.DataSO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,10 @@ namespace GameDevWithMarco.Managers
         /// </summary>
 
         [SerializeField] AudioClip backgroundMusic;
-        [SerializeField] AudioClip goodPickupSound;
-        [SerializeField] AudioClip badPickupSound;
-        [SerializeField] AudioClip dashSound;
-        [SerializeField] AudioClip lifeSound;
+        [SerializeField] SoundSO goodPickupSoundData;
+        [SerializeField] SoundSO badPickupSoundData;
+        [SerializeField] SoundSO dashSoundData;
+        [SerializeField] SoundSO lifeSoundData;
         [SerializeField] AudioSource audioSource_Music;
         [SerializeField] AudioSource audioSource_Sounds;
 
@@ -40,22 +41,25 @@ namespace GameDevWithMarco.Managers
             }
         }
 
+        private void PlaySound(float lowPitchRange, float highPitchRange, AudioClip clipToPlay, float volume)
+        {
+            audioSource_Sounds.pitch = Random.Range(lowPitchRange, highPitchRange);
+            audioSource_Sounds.PlayOneShot(clipToPlay);
+            audioSource_Sounds.volume = volume;
+        }
 
         public void GoodPickupSound()
         {
-            audioSource_Sounds.pitch = Random.Range(0.9f, 1.1f);
-            audioSource_Sounds.PlayOneShot(goodPickupSound);
-            audioSource_Sounds.volume = 2f;
+            PlaySound(goodPickupSoundData.minPitchValue, goodPickupSoundData.maxPitchValue,
+                goodPickupSoundData.clipToUse, goodPickupSoundData.soundVolume);
         }
         public void BadPickupSound()
         {
-            audioSource_Sounds.pitch = Random.Range(0.9f, 1.1f);
-            audioSource_Sounds.PlayOneShot(badPickupSound);
-            audioSource_Sounds.volume = 0.4f;
+            PlaySound(badPickupSoundData.minPitchValue, badPickupSoundData.maxPitchValue,
+                badPickupSoundData.clipToUse, badPickupSoundData.soundVolume);
         }
         public void PlayBackgroundMusic()
         {
-
             audioSource_Music.volume = 0f;
             audioSource_Music.clip = backgroundMusic;
             audioSource_Music.Play();
@@ -63,15 +67,13 @@ namespace GameDevWithMarco.Managers
         }
         public void Dash()
         {
-            audioSource_Sounds.pitch = Random.Range(0.7f, 1f);
-            audioSource_Sounds.PlayOneShot(dashSound);
-            audioSource_Sounds.volume = 0.1f;
+            PlaySound(dashSoundData.minPitchValue, dashSoundData.maxPitchValue,
+                dashSoundData.clipToUse, dashSoundData.soundVolume);
         }
         public void LifePickupSound()
         {
-            audioSource_Sounds.pitch = Random.Range(0.9f, 1.1f);
-            audioSource_Sounds.PlayOneShot(lifeSound);
-            audioSource_Sounds.volume = 1f;
+            PlaySound(lifeSoundData.minPitchValue, lifeSoundData.maxPitchValue,
+               lifeSoundData.clipToUse, lifeSoundData.soundVolume);
         }
     }
 }
