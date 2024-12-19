@@ -1493,8 +1493,8 @@ MonoBehaviour:
   lifePackagePoolData: {fileID: 11400000, guid: 7a22981ba22dcc649be3aba36fa0ebe0,
     type: 2}
   goodPool: []
-  badpool: []
-  lifepool: []
+  badPool: []
+  lifePool: []
 --- !u!4 &2024689468
 Transform:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ namespace GameDevWithMarco.DesignPattern
         [SerializeField] PoolData lifePackagePoolData;
 
         public List<GameObject> goodPool = new List<GameObject>();
-        public List<GameObject> badpool = new List<GameObject>();
-        public List<GameObject> lifepool = new List<GameObject>();
+        public List<GameObject> badPool = new List<GameObject>();
+        public List<GameObject> lifePool = new List<GameObject>();
 
         public enum TypeOfPool
         {
@@ -25,11 +25,11 @@ namespace GameDevWithMarco.DesignPattern
         protected override void Awake()
         {
             FillThePool(goodPackagePoolData, goodPool);
-            FillThePool(badPackagePoolData, badpool);
-            FillThePool(lifePackagePoolData, lifepool);
+            FillThePool(badPackagePoolData, badPool);
+            FillThePool(lifePackagePoolData, lifePool);
         }
 
-        private void FillThePool(PoolData poolData, List<GameObject> targetPool)
+        private void FillThePool(PoolData poolData, List<GameObject> targetPoolContainer)
         {
             GameObject container = CreateAContainerForThePool(poolData);
 
@@ -43,7 +43,7 @@ namespace GameDevWithMarco.DesignPattern
                 //Deactivates it 
                 thingToAddToThePool.SetActive(false);
                 //Adds it to the pool container list
-                targetPool.Add(thingToAddToThePool);
+                targetPoolContainer.Add(thingToAddToThePool);
             }
         }
 
@@ -65,10 +65,10 @@ namespace GameDevWithMarco.DesignPattern
                     poolToUse = goodPool;
                     break;
                 case TypeOfPool.Bad:
-                    poolToUse = badpool;
+                    poolToUse = badPool;
                     break;
                 case TypeOfPool.Life:
-                    poolToUse = lifepool;
+                    poolToUse = lifePool;
                     break;
             }
 
@@ -77,7 +77,7 @@ namespace GameDevWithMarco.DesignPattern
             for (int i = 0; itemPoolCount > 0; i++)
             {
                 //Looks for the first item that is not active
-                if (!poolToUse[i].activeInHierarchy)
+                if (!poolToUse[i].activeSelf)
                 {
                     poolToUse[i].SetActive(true);
                     return poolToUse[i];
