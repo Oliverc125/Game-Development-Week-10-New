@@ -24,7 +24,7 @@ namespace GameDevWithMarco.Player
         public void OnTriggerEnter2D(Collider2D collision)
         {
             ExecuteLogicBasedOnWhatWeHaveCollidedWith(collision);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);  
         }
 
         private void ExecuteLogicBasedOnWhatWeHaveCollidedWith(Collider2D collision)

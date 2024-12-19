@@ -29,7 +29,7 @@ namespace GameDevWithMarco.DesignPattern
             FillThePool(lifePackagePoolData, lifepool);
         }
 
-        private void FillThePool(PoolData poolData, List<GameObject> taregetPoolContainer)
+        private void FillThePool(PoolData poolData, List<GameObject> targetPool)
         {
             GameObject container = CreateAContainerForThePool(poolData);
 
@@ -43,7 +43,7 @@ namespace GameDevWithMarco.DesignPattern
                 //Deactivates it 
                 thingToAddToThePool.SetActive(false);
                 //Adds it to the pool container list
-                poolData.pooledObjectContainer.Add(thingToAddToThePool);
+                targetPool.Add(thingToAddToThePool);
             }
         }
 
@@ -57,7 +57,7 @@ namespace GameDevWithMarco.DesignPattern
 
         public GameObject GetPoolItem(TypeOfPool typeOfPoolToUse)
         {
-            List<GameObject> poolToUse = new List<GameObject>();
+            List<GameObject> poolToUse = new();
 
             switch (typeOfPoolToUse)
             {
@@ -72,9 +72,9 @@ namespace GameDevWithMarco.DesignPattern
                     break;
             }
 
-            int itemInPoolCount = poolToUse.Count;
+            int itemPoolCount = poolToUse.Count;
 
-            for (int i = 0; itemInPoolCount > 0; i++)
+            for (int i = 0; itemPoolCount > 0; i++)
             {
                 //Looks for the first item that is not active
                 if (!poolToUse[i].activeInHierarchy)

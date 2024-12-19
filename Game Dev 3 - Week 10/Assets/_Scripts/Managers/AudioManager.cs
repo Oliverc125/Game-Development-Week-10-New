@@ -50,13 +50,17 @@ namespace GameDevWithMarco.Managers
 
         public void GoodPickupSound()
         {
-            PlaySound(goodPickupSoundData.minPitchValue, goodPickupSoundData.maxPitchValue,
-                goodPickupSoundData.clipToUse, goodPickupSoundData.soundVolume);
+            PlaySound(goodPickupSoundData.minPitchValue, 
+                goodPickupSoundData.maxPitchValue,
+                goodPickupSoundData.clipToUse, 
+                goodPickupSoundData.soundVolume);
         }
         public void BadPickupSound()
         {
-            PlaySound(badPickupSoundData.minPitchValue, badPickupSoundData.maxPitchValue,
-                badPickupSoundData.clipToUse, badPickupSoundData.soundVolume);
+            PlaySound(badPickupSoundData.minPitchValue, 
+                badPickupSoundData.maxPitchValue,
+                badPickupSoundData.clipToUse, 
+                badPickupSoundData.soundVolume);
         }
         public void PlayBackgroundMusic()
         {
@@ -67,13 +71,17 @@ namespace GameDevWithMarco.Managers
         }
         public void Dash()
         {
-            PlaySound(dashSoundData.minPitchValue, dashSoundData.maxPitchValue,
-                dashSoundData.clipToUse, dashSoundData.soundVolume);
+            PlaySound(dashSoundData.minPitchValue, 
+                dashSoundData.maxPitchValue,
+                dashSoundData.clipToUse, 
+                dashSoundData.soundVolume);
         }
         public void LifePickupSound()
         {
-            PlaySound(lifeSoundData.minPitchValue, lifeSoundData.maxPitchValue,
-               lifeSoundData.clipToUse, lifeSoundData.soundVolume);
+            PlaySound(lifeSoundData.minPitchValue, 
+               lifeSoundData.maxPitchValue,
+               lifeSoundData.clipToUse, 
+               lifeSoundData.soundVolume);
         }
     }
 }
