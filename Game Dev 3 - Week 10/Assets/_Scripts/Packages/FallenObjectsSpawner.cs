@@ -11,17 +11,17 @@ namespace GameDevWithMarco.Packages
         [Header("Packages Pawn Position")]
         [SerializeField] GameObject[] spawners;
         [Header("Package Delay Variables ")]
-        [SerializeField] float initialDelay;
-        [SerializeField] float minDelay;
-        [SerializeField] float delayIncreaseRate;
+        [SerializeField] float initialDelay = 2.0f;
+        [SerializeField] float minDelay = 0.5f;
+        [SerializeField] float delayIncreaseRate = 0.1f;
         float currentDelay;
         [Header("Packages Drop Chance Percentages")]
-        [SerializeField] float goodPackageDropPercentage;
-        [SerializeField] float badPackageDropPercentage;
-        [SerializeField] float lifePackageDropPercentage;
+        [SerializeField] float goodPackageDropPercentage = 70f;
+        [SerializeField] float badPackageDropPercentage = 25f;
+        [SerializeField] float lifePackageDropPercentage = 5f;
         [SerializeField] float minimum_GoodPackagePercentage;
         [SerializeField] float maximum_BadPackageDropPercentage;
-        [SerializeField] float percentageChangeRatio;
+        [SerializeField] float percentageChangeRatio = 0.1f;
 
         void Start()
         {
@@ -36,8 +36,8 @@ namespace GameDevWithMarco.Packages
         }
         public void GrowGoodPercentage()
         {
-            goodPackageDropPercentage -= percentageChangeRatio;
-            badPackageDropPercentage += percentageChangeRatio;
+            goodPackageDropPercentage += percentageChangeRatio;
+            badPackageDropPercentage -= percentageChangeRatio;
             CapThePercentages();
         }
 
@@ -60,13 +60,13 @@ namespace GameDevWithMarco.Packages
 
         private ObjectPoolingPattern.TypeOfPool GetPackageBasedOnPercentage()
         {
-            float randomValue = Random.Range(0, 100.1f);
+            float randomValue = Random.Range(0f, 100.1f);
 
             if (randomValue <= goodPackageDropPercentage)
             {
                 return ObjectPoolingPattern.TypeOfPool.Good;
             }
-            else if (randomValue >= goodPackageDropPercentage &&
+            else if (randomValue > goodPackageDropPercentage &&
                 randomValue <= (goodPackageDropPercentage + badPackageDropPercentage))
             {
                 return ObjectPoolingPattern.TypeOfPool.Bad;

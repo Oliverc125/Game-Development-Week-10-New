@@ -2373,7 +2373,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6748926940924965601, guid: e8134171de3afbe43a802b2688cfd135,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6748926941505527760}
+    - targetCorrespondingSourceObject: {fileID: 6748926940924965601, guid: e8134171de3afbe43a802b2688cfd135,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6748926941505527759}
   m_SourcePrefab: {fileID: 100100000, guid: e8134171de3afbe43a802b2688cfd135, type: 3}
 --- !u!1 &6748926941505527755 stripped
 GameObject:
@@ -2387,6 +2395,82 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6748926941505527754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6748926941505527757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6748926940924965601, guid: e8134171de3afbe43a802b2688cfd135,
+    type: 3}
+  m_PrefabInstance: {fileID: 6748926941505527754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6748926941505527758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
+    type: 3}
+  m_PrefabInstance: {fileID: 6748926941505527754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748926941505527757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8b69daee1415646a65b4bddbc6da51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6748926941505527759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748926941505527757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 474f9a0a86d10b24fa858ed4945e2df5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6748926941505527758}
+        m_TargetAssemblyTypeName: GameDevWithMarco.Packages.FallenObjectsSpawner,
+          Assembly-CSharp
+        m_MethodName: GrowGoodPercentage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6748926941505527760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748926941505527757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b156b310ef7874480e7bf7c59e3dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d7d4d7d25cf5cc241a398c3b54fdc50b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6748926941505527758}
+        m_TargetAssemblyTypeName: GameDevWithMarco.Packages.FallenObjectsSpawner,
+          Assembly-CSharp
+        m_MethodName: GrowBadPercentage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7823425275215585385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2395,6 +2479,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2342553309369537330, guid: fcc8838312df518479b1bc21e6db18a6,
+        type: 3}
+      propertyPath: badPackageCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: 474f9a0a86d10b24fa858ed4945e2df5,
+        type: 2}
+    - target: {fileID: -2342553309369537330, guid: fcc8838312df518479b1bc21e6db18a6,
+        type: 3}
+      propertyPath: goodPackageCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: d7d4d7d25cf5cc241a398c3b54fdc50b,
+        type: 2}
+    - target: {fileID: -2342553309369537330, guid: fcc8838312df518479b1bc21e6db18a6,
+        type: 3}
+      propertyPath: lifePackageCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f7be2cbd01caa6408777d23c589b3e4,
+        type: 2}
     - target: {fileID: 651593284569545024, guid: fcc8838312df518479b1bc21e6db18a6,
         type: 3}
       propertyPath: m_Name

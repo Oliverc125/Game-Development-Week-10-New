@@ -12,7 +12,11 @@ namespace GameDevWithMarco.Player
         private VfxManager vfx;
         private Ripple ripple;
         public  UIManager ui;
-    
+
+        [SerializeField] GameEvent goodPackageCollected;
+        [SerializeField] GameEvent badPackageCollected;
+        [SerializeField] GameEvent lifePackageCollected;
+
         //Variables
         public bool greenCollected = false;
     
@@ -32,6 +36,7 @@ namespace GameDevWithMarco.Player
             switch (collision.gameObject.tag)
             {
                 case "GoodBox":
+                    goodPackageCollected.Raise();
                     GameManager.Instance.GreenPackLogic();
                     vfx.GoodPickupParticles();
                     vfx.AddPointsPromptMethod();
@@ -39,7 +44,8 @@ namespace GameDevWithMarco.Player
                     AudioManager.Instance.GoodPickupSound();
                     greenCollected = true;
                     break;
-                case "BadBox":                
+                case "BadBox":
+                    badPackageCollected.Raise();
                     GameManager.Instance.RedPackLogic();
                     vfx.CamShake();
                     vfx.BadPickupParticles();
@@ -48,6 +54,7 @@ namespace GameDevWithMarco.Player
                     AudioManager.Instance.BadPickupSound();
                     break;
                 case "LifeBox":
+                    lifePackageCollected.Raise();
                     GameManager.Instance.lives++;
                     ripple.RippleReaction();
                     ui.PlusOneLifeFeedback();

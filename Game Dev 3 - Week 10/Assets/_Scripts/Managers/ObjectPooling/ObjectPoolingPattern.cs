@@ -37,7 +37,7 @@ namespace GameDevWithMarco.DesignPattern
             for (int i = 0; i < poolData.poolAmount; i++)
             {
                 //Instantiates on item in the pool
-                GameObject thingToAddToThePool = Instantiate(poolData.poolItem);
+                GameObject thingToAddToThePool = Instantiate(poolData.poolItem, container.transform);
                 //Sets the patent to be what this script is attached to
                 thingToAddToThePool.transform.parent = transform;
                 //Deactivates it 
@@ -57,7 +57,7 @@ namespace GameDevWithMarco.DesignPattern
 
         public GameObject GetPoolItem(TypeOfPool typeOfPoolToUse)
         {
-            List<GameObject> poolToUse = new();
+            List<GameObject> poolToUse = new List<GameObject>();
 
             switch (typeOfPoolToUse)
             {
