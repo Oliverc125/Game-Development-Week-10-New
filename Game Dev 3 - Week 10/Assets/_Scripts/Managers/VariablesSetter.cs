@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameDevWithMarco.Managers
 {
@@ -12,6 +13,11 @@ namespace GameDevWithMarco.Managers
         {
             //Sets the fade variable
             MyScenemanager.Instance.transitionAnim = transitionAnim;
+
+            if (SceneManager.GetActiveScene().name == "scn_GameOver")
+            {
+                VfxManager.Instance.glitch.intensity = 0;
+            }
         }
     }
 }

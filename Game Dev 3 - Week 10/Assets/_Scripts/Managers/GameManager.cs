@@ -42,8 +42,6 @@ namespace GameDevWithMarco.Managers
             }
         }
 
-
-
         private void Initialisation()
         {
             playTime = 0f;
@@ -103,6 +101,11 @@ namespace GameDevWithMarco.Managers
             {
                 gameOver.Raise();
             }
+        }
+
+        public void LifePackageLogic()
+        {
+            lives++;
         }
 
         public void RestartGame()
