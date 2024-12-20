@@ -51,7 +51,7 @@ namespace GameDevWithMarco.Packages
 
         private IEnumerator SpawningLoop()
         {
-            SpawnPackageAtRandomLoaction(ObjectPoolingPattern.TypeOfPool.Good);
+            SpawnPackageAtRandomLoaction(GetPackageBasedOnPercentage());
             yield return new WaitForSeconds(currentDelay);
             currentDelay -= delayIncreaseRate;
             if (currentDelay < minDelay) currentDelay = minDelay;

@@ -2144,10 +2144,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
         type: 3}
+      propertyPath: minDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
+        type: 3}
       propertyPath: lifePackage
       value: 
       objectReference: {fileID: 1672529824157174036, guid: ce14d5e697e1c7e40ab54f2a57253a55,
         type: 3}
+    - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
+        type: 3}
+      propertyPath: delayIncreaseRate
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
         type: 3}
       propertyPath: posArray.Array.size
@@ -2329,6 +2339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: goodPackageDropPercentage
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
+        type: 3}
+      propertyPath: lifePackageDropPercentage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6748926940924965607, guid: e8134171de3afbe43a802b2688cfd135,
         type: 3}
